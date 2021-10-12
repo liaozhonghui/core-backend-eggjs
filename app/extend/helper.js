@@ -1,4 +1,7 @@
-const { each, head, isArray, keys, map, size } = require('lodash');
+/* eslint valid-jsdoc: "off" */
+
+'use strict';
+
 const moment = require('moment');
 
 module.exports = exports = {};
@@ -7,13 +10,14 @@ exports.formatTime = time => moment(time).format('YYYY-MM-DD HH:mm:ss');
 
 /**
  * json response handler
- * @param param0 { ctx, res, msg}
- * @return
- * {
- *  code: 0, // error code
- *  msg: '', // error msg
- *  data: any // resp data
- * }
+ * @typedef {Object} successResp
+ * @property {number} code error_code
+ * @property {string} msg msg
+ * @property {string} data data
+ *
+ * @type {function({ctx, res, msg})} param0  { ctx, res, msg}
+ * @return {successResp}
+ *
  */
 exports.success = ({ ctx, res = null, msg = '请求成功' }) => {
   ctx.body = {

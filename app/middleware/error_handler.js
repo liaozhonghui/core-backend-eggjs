@@ -1,3 +1,5 @@
+'use strict';
+
 const { isError } = require('lodash');
 // error handler: capture system errors
 module.exports = (_option, _app) => {
@@ -11,7 +13,7 @@ module.exports = (_option, _app) => {
       ctx.body = {
         code: status,
         msg: error,
-        err: err.stack || ''
+        err: err.stack || '',
       };
       ctx.logger.error(isError(err) ? err.stack : error);
       ctx.status = 200;

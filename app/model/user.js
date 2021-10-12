@@ -1,3 +1,6 @@
+/* eslint valid-jsdoc: "off" */
+'use strict';
+
 /**
  * Model: 用户表
  */

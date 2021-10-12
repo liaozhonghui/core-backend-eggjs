@@ -1,11 +1,13 @@
+'use strict';
 const Controller = require('egg').Controller;
-const { range } = require('lodash');
 
 class UserController extends Controller {
   async list() {
-    let { service, ctx } = this;
-    const data = await service.user.list();
+    const { service, ctx } = this;
+    const res = await service.user.list();
 
     ctx.helper.success({ ctx, res });
   }
 }
+
+module.exports = UserController;

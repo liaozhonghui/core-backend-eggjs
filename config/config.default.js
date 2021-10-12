@@ -2,6 +2,7 @@
 
 'use strict';
 
+const { extend } = require('lodash');
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -16,22 +17,22 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1634010379762_9098';
 
   // add your middleware config here
-  config.middleware = ['errorHandler'];
+  config.middleware = [ 'errorHandler' ];
 
   config.security = extend(config.security, {
     csrf: { enable: false },
-    domainWhiteList: ['*'],
+    domainWhiteList: [ '*' ],
   });
   config.cors = {
     origin: '*',
-    exposeHeaders: ['x-access-token'],
+    exposeHeaders: [ 'x-access-token' ],
     credentials: false,
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   };
   config.static = {
     prefix: '/',
     dir: appInfo.baseDir + '/app/public',
-    buffer: true
+    buffer: true,
   };
   config.logger = {
     encoding: 'utf-8',

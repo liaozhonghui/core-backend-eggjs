@@ -16,10 +16,10 @@ module.exports = {
   },
   mongoose: {
     enable: true,
-    package: 'egg-mongoose'
+    package: 'egg-mongoose',
   },
   io: {
     enable: false,
-    package: 'egg-socket.io'
+    package: 'egg-socket.io',
   },
 };

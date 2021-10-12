@@ -1,3 +1,5 @@
+'use strict';
+
 const Controller = require('egg').Controller;
 
 class DefaultController extends Controller {
@@ -10,7 +12,7 @@ class DefaultController extends Controller {
 
 module.exports = DefaultController;
 
-exports.ping = async function () {
+exports.ping = async function() {
   const message = this.args[0];
   await this.socket.emit('res', `Hi! this is your message:${message}`);
 };
